@@ -1,0 +1,129 @@
+import 'package:flutter/material.dart';
+
+import '../../models/commerce.dart';
+
+class ProfileView extends StatelessWidget {
+  final String username;
+  final String idNumber;
+  final String email;
+  final String phone;
+  final List<CommerceElement> companies;
+
+  ProfileView({
+    required this.username,
+    required this.idNumber,
+    required this.email,
+    required this.phone,
+    required this.companies,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                CircleAvatar(
+                  radius: 50,
+                  child: Text(
+                    username[0].toUpperCase(),
+                    style: TextStyle(fontSize: 40),
+                  ),
+                ),
+                SizedBox(height: 20),
+                Row(
+                  children: [
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          _buildInfoRow('Nombre:', username),
+                          SizedBox(height: 20),
+                          _buildInfoRow('Cédula:', idNumber),
+                        ],
+                      ),
+                    ),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          _buildInfoRow('Correo:', email),
+                          SizedBox(height: 20),
+                          _buildInfoRow('Teléfono:', phone),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 20),
+                Container(
+                  decoration: BoxDecoration(
+                    color: Colors.blue,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  padding: EdgeInsets.all(8),
+                  child: Center(
+                    child: Text(
+                      'Empresas asociadas',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          SizedBox(height: 10),
+          Expanded(
+            child: ListView.separated(
+              physics: ClampingScrollPhysics(),
+              itemCount: companies.length,
+              separatorBuilder: (BuildContext context, int index) {
+                return Divider(
+                  color: Colors.grey,
+                  height: 1,
+                );
+              },
+              itemBuilder: (context, index) {
+                return _buildCompanyTile(companies[index]);
+              },
+            ),
+          ),
+        ],
+      );
+  }
+
+  Widget _buildInfoRow(String label, String value) {
+    return Row(
+      children: [
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(label, style: TextStyle(fontWeight: FontWeight.bold)),
+            Text(value),
+          ],
+        ),
+      ],
+    );
+  }
+
+  Widget _buildCompanyTile(CommerceElement company) {
+    return ListTile(
+      title: Text(company.name!),
+      subtitle: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text('RIF: ${company.taxId}'),
+          Text('Dirección: ${company.address}'),
+        ],
+      ),
+    );
+  }
+}
