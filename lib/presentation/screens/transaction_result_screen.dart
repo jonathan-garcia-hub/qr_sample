@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qr_sample/themes/bizz_theme.dart';
 
 import 'package:share_plus/share_plus.dart';
 
@@ -24,6 +25,8 @@ class _TransactionResultScreenState extends State<TransactionResultScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: ThemeConfig.primaryColor,
+        foregroundColor: Colors.black,
         title: Text('Resultado de Transacción'),
       ),
       body: Center(
@@ -32,11 +35,11 @@ class _TransactionResultScreenState extends State<TransactionResultScreen> {
           children: [
             widget.transactionCode == '00' ?
               Text(
-                'Transacción realizada exitosamente',
+                widget.message,
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ):
               Text(
-                'Error en transacción',
+                widget.message,
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
             SizedBox(height: 20),
@@ -64,7 +67,9 @@ class _TransactionResultScreenState extends State<TransactionResultScreen> {
               ),
             ),
             SizedBox(height: 20),
-            Row(
+
+            widget.receipt != 'NA'
+              ? Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 ElevatedButton.icon(
@@ -75,9 +80,10 @@ class _TransactionResultScreenState extends State<TransactionResultScreen> {
                     // Share.shareFiles([file.path]);
                     Share.share(widget.receipt);
                   },
-                  icon: Icon(Icons.share),
-                  label: Text('Compartir'),
+                  icon: const Icon(Icons.share, color: Colors.black,),
+                  label: const Text('Compartir', style: TextStyle(color: Colors.black),),
                   style: ElevatedButton.styleFrom(
+                    backgroundColor: ThemeConfig.primaryColor,
                     padding: EdgeInsets.symmetric(horizontal: 20),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
@@ -86,7 +92,8 @@ class _TransactionResultScreenState extends State<TransactionResultScreen> {
                 ),
 
               ],
-            ),
+            )
+              : const SizedBox(),
           ],
         ),
       ),

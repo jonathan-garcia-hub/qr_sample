@@ -20,6 +20,8 @@ class _ScannerPageState extends State<ScannerPage> {
   TextEditingController _amountController = TextEditingController();
   bool _isLoading = false;
 
+
+
   @override
   void initState() {
     super.initState();
@@ -30,6 +32,8 @@ class _ScannerPageState extends State<ScannerPage> {
   @override
   Widget build(BuildContext context) {
     final colors = Theme.of(context).colorScheme;
+
+
 
     return ChangeNotifierProvider(
         create: (context) => LoginViewModel(),
@@ -342,6 +346,9 @@ class _ScannerPageState extends State<ScannerPage> {
       ),
     ),
     );
+
+
+
   }
 
 
@@ -367,6 +374,8 @@ class _ScannerPageState extends State<ScannerPage> {
       return "0,00"; // Handle the case where parsing fails
     }
   }
+
+  
 
 
 }
