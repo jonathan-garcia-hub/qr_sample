@@ -8,7 +8,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 import 'package:qr_sample/presentation/screens/home_screen.dart';
 
-import '../../themes/bizz_theme.dart';
+import '../../themes/kinpos_theme.dart';
 import '../../util/biometric_util.dart';
 import '../../util/local_auth_util.dart';
 

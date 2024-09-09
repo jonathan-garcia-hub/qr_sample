@@ -63,7 +63,7 @@ class ApiKeyUtil {
         final apiKeyOkJson = json.decode(response.body);
         final apiKeyOk = ApiKeystatusOk.fromJson(apiKeyOkJson);
 
-        print(apiKeyOk.message+apiKeyOk.port);
+        print(apiKeyOk.message+apiKeyOk.port.toString());
 
         return true; //Significa que está valida la apiKey
       } else {

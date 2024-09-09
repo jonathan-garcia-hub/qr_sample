@@ -6,7 +6,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
 import 'package:qr_sample/presentation/screens/qr_screen.dart';
 
-import '../../themes/bizz_theme.dart';
+import '../../themes/kinpos_theme.dart';
 import '../../viewmodels/login_viewmodel.dart';
 
 

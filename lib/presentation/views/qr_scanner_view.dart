@@ -7,7 +7,7 @@ import 'package:qr_sample/models/qr_transaction.dart';
 import 'package:qr_sample/viewmodels/transaction_viewmodel.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
-import '../../themes/bizz_theme.dart';
+import '../../themes/kinpos_theme.dart';
 import '../screens/transaction_verification_screen.dart';
 
 class QRScannerView extends StatefulWidget {

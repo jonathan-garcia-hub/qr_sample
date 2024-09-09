@@ -7,7 +7,7 @@ import 'package:qr_sample/presentation/screens/scanner_screen.dart';
 import 'package:qr_sample/presentation/views/home.dart';
 import 'package:qr_sample/presentation/views/profile_view.dart';
 import 'package:qr_sample/presentation/views/transactions_view.dart';
-import 'package:qr_sample/themes/bizz_theme.dart';
+import 'package:qr_sample/themes/kinpos_theme.dart';
 import 'package:qr_sample/viewmodels/commerce_viewmodel.dart';
 import 'package:qr_sample/viewmodels/login_viewmodel.dart';
 

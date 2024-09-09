@@ -9,7 +9,7 @@ import 'package:qr_sample/presentation/screens/result_screen.dart';
 
 import '../../models/qr.dart';
 import '../../models/qr_response.dart';
-import '../../themes/bizz_theme.dart';
+import '../../themes/kinpos_theme.dart';
 import '../../viewmodels/login_viewmodel.dart';
 
 

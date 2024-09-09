@@ -6,7 +6,7 @@ import 'package:provider/provider.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'package:qr_sample/presentation/views/transactions_view.dart';
-import 'package:qr_sample/themes/bizz_theme.dart';
+import 'package:qr_sample/themes/kinpos_theme.dart';
 import 'package:qr_sample/viewmodels/login_viewmodel.dart';
 
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -349,7 +349,7 @@ class YourCreditCardWidget extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Image.asset(
-                ThemeConfig.smallLogo,
+                ThemeConfig.altLogo,
                 width: 40,
                 height: 40,
               ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:qr_sample/presentation/screens/scanner_screen.dart';
 
-import '../../themes/bizz_theme.dart';
+import '../../themes/kinpos_theme.dart';
 import 'login_screen.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 

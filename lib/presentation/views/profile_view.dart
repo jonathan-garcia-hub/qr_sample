@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:qr_sample/themes/bizz_theme.dart';
+import 'package:qr_sample/themes/kinpos_theme.dart';
 
 import '../../models/commerce.dart';
 

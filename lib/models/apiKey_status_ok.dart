@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 class ApiKeystatusOk {
-  String port;
+  int port;
   String message;
   String applicationName;
 
