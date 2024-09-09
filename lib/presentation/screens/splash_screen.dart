@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:qr_sample/presentation/screens/scanner_screen.dart';
 
+import '../../themes/kinpos_theme.dart';
 import 'login_screen.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
@@ -12,8 +13,9 @@ class SplashScreen extends StatelessWidget {
       Navigator.pushReplacement(
         context,
         PageRouteBuilder(
-          pageBuilder: (context, animation, secondaryAnimation) => ScannerPage(),
-          transitionsBuilder: (context, animation, secondaryAnimation, child) {
+          // pageBuilder: (context, animation, secondaryAnimation) => ScannerPage(),
+          pageBuilder: (context, animation, secondaryAnimation) => LoginScreen(),
+        transitionsBuilder: (context, animation, secondaryAnimation, child) {
             const begin = Offset(1.0, 0.0);
             const end = Offset.zero;
             const curve = Curves.easeInOut;
@@ -27,15 +29,15 @@ class SplashScreen extends StatelessWidget {
     });
 
     return Scaffold(
-      backgroundColor: Color(0xff221c46),
+      backgroundColor: ThemeConfig.primaryColor,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset('assets/Images/plxColor.png'),
-            SizedBox(height: 50), // Espaciado entre la imagen y el spinner
+            Image.asset(ThemeConfig.smallLogo, height: 100,),
+            SizedBox(height: 50), // Espaciado entre la imagen y el spinners
             SpinKitCircle(
-              color: Colors.white,
+              color: ThemeConfig.secondaryColor,
               size: 60.0,
             ),
           ],
